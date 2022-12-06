@@ -1,0 +1,18 @@
+version: '3.9'
+
+name: mariadb_test
+
+services:
+
+  db:
+    container_name: ${PROJECT_NAME}
+    hostname: ${PROJECT_NAME}
+    image: mariadb:${MARIADB_VERSION}
+    restart: ${MARIADB_OPTION_RESTART}
+    ports:
+      - ${MARIADB_PORT}:3306
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MARIADB_USER: ${MARIADB_USER}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
+      MARIADB_DATABASE: ${MARIADB_DATABASE}
