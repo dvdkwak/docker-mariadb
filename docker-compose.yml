@@ -5,15 +5,15 @@ services:
   db:
     container_name: ${PROJECT_NAME}_db
     hostname: ${PROJECT_NAME}_db
-    image: mariadb:${MARIADB_VERSION}
-    restart: ${MARIADB_OPTION_RESTART}
+    image: ${DB_TYPE}:${DB_VERSION}
+    restart: ${DB_OPTION_RESTART}
     ports:
-      - ${MARIADB_PORT}:3306
+      - ${DB_PORT}:3306
     environment:
-      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
-      MARIADB_USER: ${MARIADB_USER}
-      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
-      MARIADB_DATABASE: ${MARIADB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
 
   adminer:
     container_name: ${PROJECT_NAME}_adminer
