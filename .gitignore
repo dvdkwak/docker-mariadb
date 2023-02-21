@@ -2,5 +2,5 @@
 .vscode
 .DS_*
 
-# testing env
-test.env
+# Env file is generated and should not be tracked by Git.
+.env
